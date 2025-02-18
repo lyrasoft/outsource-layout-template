@@ -34,12 +34,13 @@ export async function css() {
   return wait(
     sass(
       'resources/assets/scss/main.scss',
-      'assets/css/main.css'
+      'assets/css/main.css',
+      {
+        sass: {
+          includePaths: 'node_modules'
+        }
+      }
     ),
-    sass(
-      'resources/assets/scss/bootstrap.scss',
-      'assets/css/bootstrap.css'
-    )
   );
 }
 
